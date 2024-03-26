@@ -23,9 +23,7 @@ jobs:
           permission: write
           commands: |
             test
-            legacy-test
             test-performance
-            publish
             publish-java-cdk
             connector-performance
           static-args: |
