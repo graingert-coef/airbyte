@@ -378,7 +378,14 @@ class Stream(HttpStream, ABC):
             return APIv2Property(properties)
         return APIv3Property(properties)
 
-    def __init__(self, api: API, start_date: Union[str, pendulum.datetime], credentials: Mapping[str, Any] = None, acceptance_test_config: Mapping[str, Any] = None, **kwargs):
+    def __init__(
+        self,
+        api: API,
+        start_date: Union[str, pendulum.datetime],
+        credentials: Mapping[str, Any] = None,
+        acceptance_test_config: Mapping[str, Any] = None,
+        **kwargs,
+    ):
         super().__init__(**kwargs)
         self._api: API = api
         self._credentials = credentials
@@ -1648,7 +1655,7 @@ class Engagements(EngagementsABC, IncrementalStream):
             "api": self._api,
             "start_date": since_date,
             "credentials": self._credentials,
-            "acceptance_test_config": {casing.camel_to_snake(EngagementsRecent.__name__): self._acceptance_test_config}
+            "acceptance_test_config": {casing.camel_to_snake(EngagementsRecent.__name__): self._acceptance_test_config},
         }
 
         try:
