@@ -194,7 +194,7 @@ jobs:
 
   publish-docker-image:
     timeout-minutes: 240
-    needs:
+#    needs:
 #      - publish-cdk
     runs-on: connector-publish-large
     steps:
