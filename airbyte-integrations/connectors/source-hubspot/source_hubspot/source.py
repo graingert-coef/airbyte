@@ -5,7 +5,7 @@
 import logging
 from http import HTTPStatus
 from itertools import chain
-from typing import Any, List, Mapping, Optional, Tuple
+from typing import Any, List, Mapping, Optional, Tuple, Generator
 
 import requests
 from airbyte_cdk.logger import AirbyteLogger
@@ -220,7 +220,7 @@ class SourceHubspot(AbstractSource):
 
     def get_web_analytics_custom_objects_stream(
         self, custom_object_stream_instances: List[CustomObject], common_params: Any
-    ) -> WebAnalyticsStream:
+    ) -> Generator[WebAnalyticsStream, None, None]:
         for custom_object_stream_instance in custom_object_stream_instances:
 
             def __init__(self, **kwargs: Any):
