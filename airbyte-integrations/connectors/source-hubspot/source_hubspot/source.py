@@ -5,7 +5,7 @@
 import logging
 from http import HTTPStatus
 from itertools import chain
-from typing import Any, List, Mapping, Optional, Tuple, Generator
+from typing import Any, Generator, List, Mapping, Optional, Tuple
 
 import requests
 from airbyte_cdk.logger import AirbyteLogger
