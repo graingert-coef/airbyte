@@ -5,8 +5,8 @@ package io.airbyte.cdk.db.factory
 
 /** Collection of JDBC driver class names and the associated JDBC URL format string. */
 enum class DatabaseDriver(
-    @JvmField val driverClassName: String,
-    @JvmField val urlFormatString: String
+    val driverClassName: String,
+    val urlFormatString: String
 ) {
     CLICKHOUSE("com.clickhouse.jdbc.ClickHouseDriver", "jdbc:clickhouse:%s://%s:%d/%s"),
     DATABRICKS(
